@@ -26,8 +26,8 @@ final class WebViewController: UIViewController {
     }()
 
     // MARK: - Private property
-    private let service = Service()
-    private var filmInfo: [VideoId]?
+    private let serviceLoad = Service()
+    private var filmInfos: [VideoId]?
 
     // MARK: - Public property
     var filmIndex: Int?
@@ -48,19 +48,19 @@ final class WebViewController: UIViewController {
 
     private func loadWebViewData() {
         guard let index = filmIndex else { return }
-        service.loadVideos(index: index) { result in
-
+        Service.shared.loadVideos(index: index) { [weak self] result in
+            
             guard result.count != 0,
                   let url =
-                  URL(string: Constants.urlShemeHostPath + "\(index)" + Constants.urlFragment + "\(result[0].key)")
+                    URL(string: "\(Constants.urlShemeHostPath)\(index)\(Constants.urlFragment)\(result[0].key)")
             else {
                 DispatchQueue.main.async {
-                    self.dismiss(animated: true)
+                    self?.dismiss(animated: true)
                 }
                 return
             }
             DispatchQueue.main.async {
-                self.webView.load(URLRequest(url: url))
+                self?.webView.load(URLRequest(url: url))
             }
         }
     }

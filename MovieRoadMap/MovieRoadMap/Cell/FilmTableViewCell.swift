@@ -7,7 +7,7 @@
 
 import UIKit
 
-///ячейка  таблицы на начальном контроллере
+///Ячейка  таблицы на начальном контроллере
 final class FilmTableViewCell: UITableViewCell {
 
     // MARK: - Private Visual Components

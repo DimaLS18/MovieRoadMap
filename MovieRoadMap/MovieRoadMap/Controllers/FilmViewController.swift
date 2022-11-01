@@ -140,6 +140,10 @@ class FilmViewController: UIViewController {
     // MARK: - LifeCycle
     override func viewDidLoad() {
         super.viewDidLoad()
+     setupView()
+    }
+// MARK: - Private method
+    private func setupView(){ 
         view.backgroundColor = .black
         view.addSubview(titleLabel)
         view.addSubview(descriptionLabel)
@@ -157,15 +161,8 @@ class FilmViewController: UIViewController {
         boxView.addSubview(genresLabel)
         webViewButton.addSubview(rightImageView)
         createConstraint()
-        guard let index = filmIndex else { return }
-        service.loadFilm(index: index) { [weak self] result in
-            self?.filmInfo = result
-            DispatchQueue.main.async {
-                self?.setupData(data: result)
-            }
-        }
+
     }
-//MARK: - Private method
     private func setupData(data: Film) {
         filmImageView.loadImage(with: data.poster)
         titleLabel.attributedText = NSMutableAttributedString().normal("\(data.title) ")
@@ -243,4 +240,15 @@ class FilmViewController: UIViewController {
 
         ])
     }
+
+    private func loadFilmData() {
+           guard let index = filmIndex else { return }
+           Service.shared.loadFilm(index: index) { [weak self] result in
+               self?.filmInfo = result
+               DispatchQueue.main.async {
+                   self?.navigationItem.title = result.title
+                   self?.setupData(data: result)
+               }
+           }
+       }
 }

@@ -32,7 +32,6 @@ struct Film: Decodable {
     enum CodingKeys: String, CodingKey {
         case id
         case title
-
         case tagline
         case overview
         case genres
@@ -47,8 +46,6 @@ struct Film: Decodable {
 struct Genres: Decodable {
     let name: String
 }
-
-
 
 /// модель фильма для второго экрана 
 struct FilmInfo: Decodable {

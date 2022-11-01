@@ -8,11 +8,13 @@ import Foundation
 
 // MARK: - Private Enum
 enum PurchaseEndPoint: String {
+    case link = "https://image.tmdb.org/t/p/w500"
     case popular = "/3/movie/popular"
     case topRated = "/3/movie/top_rated"
     case upcoming = "/3/movie/upcoming"
     case apiKey = "api_key"
     case language = "language"
+
 }
 
 /// Класс  отвечающий за загрузку даннных с сервера
@@ -25,6 +27,8 @@ final class Service {
 
     private let apiKey = "e81faf355027f9ca91258698400315ed"
     private var category = PurchaseEndPoint.popular
+
+    static let shared = Service()
 
     func loadFilms(page: Int, completion: @escaping (Result) -> Void) {
         loadFilms(page: page, api: category, completion: completion)

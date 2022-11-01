@@ -16,11 +16,11 @@
 		2D85356D290976EB00A41DE8 /* FilmInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85356C290976EB00A41DE8 /* FilmInfo.swift */; };
 		2D8535702909775B00A41DE8 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85356F2909775B00A41DE8 /* Service.swift */; };
 		2D8535742909779C00A41DE8 /* FilmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8535732909779C00A41DE8 /* FilmTableViewCell.swift */; };
-		2D853577290977D000A41DE8 /* Extension+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853576290977D000A41DE8 /* Extension+UIImageView.swift */; };
+		2D853577290977D000A41DE8 /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853576290977D000A41DE8 /* UIImageView + Extension.swift */; };
 		2D8535792909810100A41DE8 /* FilmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D8535782909810100A41DE8 /* FilmViewController.swift */; };
 		2D85357D290BAAC200A41DE8 /* VideoID.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85357C290BAAC200A41DE8 /* VideoID.swift */; };
 		2D85357F290BAC1E00A41DE8 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D85357E290BAC1E00A41DE8 /* WebViewController.swift */; };
-		2D853583290C462800A41DE8 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853582290C462800A41DE8 /* Extension+String.swift */; };
+		2D853583290C462800A41DE8 /* NSMutableAttributedString + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D853582290C462800A41DE8 /* NSMutableAttributedString + Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,11 +35,11 @@
 		2D85356C290976EB00A41DE8 /* FilmInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmInfo.swift; sourceTree = "<group>"; };
 		2D85356F2909775B00A41DE8 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		2D8535732909779C00A41DE8 /* FilmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTableViewCell.swift; sourceTree = "<group>"; };
-		2D853576290977D000A41DE8 /* Extension+UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIImageView.swift"; sourceTree = "<group>"; };
+		2D853576290977D000A41DE8 /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		2D8535782909810100A41DE8 /* FilmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmViewController.swift; sourceTree = "<group>"; };
 		2D85357C290BAAC200A41DE8 /* VideoID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoID.swift; sourceTree = "<group>"; };
 		2D85357E290BAC1E00A41DE8 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		2D853582290C462800A41DE8 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		2D853582290C462800A41DE8 /* NSMutableAttributedString + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString + Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,8 +125,8 @@
 		2D853575290977BA00A41DE8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				2D853576290977D000A41DE8 /* Extension+UIImageView.swift */,
-				2D853582290C462800A41DE8 /* Extension+String.swift */,
+				2D853576290977D000A41DE8 /* UIImageView + Extension.swift */,
+				2D853582290C462800A41DE8 /* NSMutableAttributedString + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -226,12 +226,12 @@
 			files = (
 				2D85357D290BAAC200A41DE8 /* VideoID.swift in Sources */,
 				2D85354B2907D1BB00A41DE8 /* MainViewController.swift in Sources */,
-				2D853577290977D000A41DE8 /* Extension+UIImageView.swift in Sources */,
+				2D853577290977D000A41DE8 /* UIImageView + Extension.swift in Sources */,
 				2D85357F290BAC1E00A41DE8 /* WebViewController.swift in Sources */,
 				2D8535792909810100A41DE8 /* FilmViewController.swift in Sources */,
 				2D85356D290976EB00A41DE8 /* FilmInfo.swift in Sources */,
 				2D8535702909775B00A41DE8 /* Service.swift in Sources */,
-				2D853583290C462800A41DE8 /* Extension+String.swift in Sources */,
+				2D853583290C462800A41DE8 /* NSMutableAttributedString + Extension.swift in Sources */,
 				2D8535742909779C00A41DE8 /* FilmTableViewCell.swift in Sources */,
 				2D8535472907D1BB00A41DE8 /* AppDelegate.swift in Sources */,
 				2D8535492907D1BB00A41DE8 /* SceneDelegate.swift in Sources */,

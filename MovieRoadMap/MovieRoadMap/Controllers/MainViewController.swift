@@ -15,6 +15,8 @@ final class MainViewController: UIViewController {
         static let upcoming = "Скоро"
         static let cellIdentifier = "cell"
         static let movies = "ФИЛЬМЫ"
+        static let keyValue = "e81faf355027f9ca91258698400315ed"
+        static let key = "apiKey"
     }
 
     // MARK: - Private Visual Components
@@ -64,25 +66,26 @@ final class MainViewController: UIViewController {
         return tableView
     }()
 
-
-    private let service = Service()
-    private var pageInfo: Int?
-    private var films: [FilmInfo] = []
-
-
     lazy var closure: ((UIImage) -> ())? = { [weak self] image in
         self?.tableView.backgroundView = UIImageView(image: image)
     }
+    private let loadFilmService = Service()
+    private var pageInfo: Int?
+    private var films: [FilmInfo] = []
+
 
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        navigationItem.title = Constants.movies
-        tableView.dataSource = self
-        tableView.delegate = self
-        service.loadFilms(page: 1, api: PurchaseEndPoint.popular) { [weak self] result in
+
+    }
+
+    // MARK: - Private methods
+    private func loadFilmsData() {
+        UserDefaults.standard.set(Constants.keyValue, forKey: Constants.key)
+        Service.shared.loadFilms(page: 1, api: PurchaseEndPoint.popular) { [weak self] result in
             self?.films = result.results
             self?.pageInfo = result.pageCount
             DispatchQueue.main.async {
@@ -91,15 +94,16 @@ final class MainViewController: UIViewController {
         }
     }
 
-    // MARK: - Private methods
     private func setupView() {
         view.backgroundColor = .black
         view.addSubview(popularButton)
         view.addSubview(topRatedButton)
         view.addSubview(upcomingButton)
         view.addSubview(tableView)
-
+        tableView.dataSource = self
+        tableView.delegate = self
         createConstraint()
+        navigationItem.title = Constants.movies
     }
 
     private func createConstraint() {
@@ -145,7 +149,7 @@ final class MainViewController: UIViewController {
             }
         }
 
-        service.loadFilms(page: 1, api: category) { [weak self] result in
+        loadFilmService.loadFilms(page: 1, api: category) { [weak self] result in
             self?.pageInfo = result.pageCount
             self?.films = result.results
             DispatchQueue.main.async {
@@ -179,7 +183,6 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
         let row = indexPath.row
         let fvc = FilmViewController()
         fvc.filmIndex = films[row].id
